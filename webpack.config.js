@@ -18,11 +18,11 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         use: ExtractTextPlugin.extract(
           {
             fallback: 'style-loader',
-            use: ['css-loader']
+            use: ['css-loader', 'sass-loader']
           })
       }
     ]
