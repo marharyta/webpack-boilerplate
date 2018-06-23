@@ -2,6 +2,7 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackMd5Hash = require('webpack-md5-hash');
 
 module.exports = {
   entry: { main: './src/index.js' },
@@ -30,13 +31,14 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin(
-      { filename: 'style.[chunkhash].css', disable: false, allChunks: true }
+      { filename: 'style.[hash].css', disable: false, allChunks: true }
     ),
     new HtmlWebpackPlugin({
       inject: false,
       hash: true,
       template: './src/index.html',
       filename: 'index.html'
-    })
+    }),
+    new WebpackMd5Hash()
   ]
 };
