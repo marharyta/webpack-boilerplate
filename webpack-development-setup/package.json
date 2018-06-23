@@ -6,7 +6,7 @@
   "author": "Margarita Obraztsova <marharyta.obraztsova@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack --mode development"
+    "dev": "webpack-dev-server --mode development --open"
   },
   "dependencies": {
     "autoprefixer": "^8.6.3",
@@ -15,6 +15,9 @@
     "babel-preset-env": "^1.7.0",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^0.28.11",
+    "eslint": "^5.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.0",
@@ -24,6 +27,8 @@
     "style-loader": "^0.21.0",
     "webpack": "^4.12.0",
     "webpack-cli": "^3.0.8",
-    "webpack-md5-hash": "^0.0.6"
+    "webpack-dev-server": "^3.1.4",
+    "webpack-md5-hash": "^0.0.6",
+    "yarn": "^1.7.0"
   }
 }
