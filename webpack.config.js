@@ -1,8 +1,8 @@
 // webpack v4
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: { main: './src/index.js' },
@@ -21,18 +21,14 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ExtractTextPlugin.extract(
-          {
-            fallback: 'style-loader',
-            use: ['css-loader', 'sass-loader']
-          })
+        use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
       }
     ]
   },
   plugins: [
-    new ExtractTextPlugin(
-      { filename: 'style.[hash].css', disable: false, allChunks: true }
-    ),
+    new MiniCssExtractPlugin({
+      filename: 'style.[contenthash].css',
+    }),
     new HtmlWebpackPlugin({
       inject: false,
       hash: true,
