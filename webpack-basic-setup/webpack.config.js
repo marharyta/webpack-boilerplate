@@ -9,7 +9,11 @@ module.exports = {
   entry: { main: "./src/index.js" },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].[chunkhash].js"
+    filename: "[name].[hash].js"
+  },
+  devServer: {
+    contentBase: "./dist",
+    port: 7700
   },
   module: {
     rules: [
@@ -27,6 +31,30 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           "css-loader",
           "postcss-loader"
+        ]
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          "file-loader",
+          {
+            loader: "image-webpack-loader",
+            options: {
+              bypassOnDebug: true
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|otf)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "fonts/"
+            }
+          }
         ]
       }
     ]
