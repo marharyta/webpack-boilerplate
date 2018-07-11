@@ -1,3 +1,12 @@
-div {
-  color: red;
+#container {
+  display: flex;
+  justify-content: space-around;
+
+  #scss {
+    color: red;
+
+    &:hover {
+      color: blue;
+    }
+  }
 }
