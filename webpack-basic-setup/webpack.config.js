@@ -12,7 +12,7 @@ module.exports = {
     filename: "[name].[hash].js"
   },
   devServer: {
-    contentBase: "./dist",
+    contentBase: "./",
     port: 7700
   },
   module: {
