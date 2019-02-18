@@ -1,4 +1,8 @@
 div {
-  color: black;
-  background-image: url("https://images-na.ssl-images-amazon.com/images/I/A15dQM39ELL._CR0,0,3840,2880_._SL1000_.jpg");
+  font-size: 20px;
+  padding: 20px;
+}
+
+body {
+  background-color: #fbfbfb;
 }
