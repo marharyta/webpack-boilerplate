@@ -6,7 +6,7 @@
   "author": "Margarita Obraztsova <marharyta.obraztsova@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "NODE_ENV=development webpack-dev-server --mode=development --hot"
+    "dev": "SET NODE_ENV=development && webpack-dev-server --mode=development --hot"
   },
   "dependencies": {
     "autoprefixer": "^8.6.3",
